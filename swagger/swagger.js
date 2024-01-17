@@ -6,7 +6,6 @@ const doc = {
         description: 'Description',
     },
     host: 'cse-341-contacts-project.onrender.com',
-    basePath: '/users',
     schemes: ['https'],
 };
 
