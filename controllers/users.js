@@ -8,7 +8,10 @@ const setCorsHeader = (response) => {
 };
 
 const getAll = async (req, res) => {
-    //swager.tags=['Users']
+    /*
+        #swagger.summary = 'Gets all users'
+        #swagger.tags=['Users']
+    */
     const result = await mongodb
         .getDatabase()
         .db()
@@ -22,7 +25,16 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    //swager.tags=['Users']
+    /*
+        #swagger.summary = 'Gets a single user'
+        #swagger.description = 'Gets a single user based on an "_id"'
+        #swagger.tags=['Users']
+        #swagger.parameters['id'] = {
+            description: 'Id of user',
+            required: true,
+            type: 'number',
+            schema: {id},
+    */
     const userId = new ObjectId(req.params.id);
     const user = await mongodb
         .getDatabase()
@@ -36,7 +48,11 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-    //swager.tags=['Users']
+    /*
+        #swagger.summary = 'Creates a new user'
+        #swagger.description = 'Creates a new user based on an "_id"'
+        #swagger.tags=['Users']
+    */
     const user = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -61,7 +77,16 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    //swager.tags=['Users']
+    /*
+        #swagger.summary = 'Updates a single user'
+        #swagger.description = 'Updates a single user based on an "_id"'
+        #swagger.tags=['Users']
+        #swagger.parameters['id'] = {
+            description: 'Id of user',
+            required: true,
+            type: 'number',
+            schema: {id},
+    */
     const userId = new ObjectId(req.params.id);
     const user = {
         firstName: req.body.firstName,
@@ -87,7 +112,16 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-    //swager.tags=['Users']
+    /*
+        #swagger.summary = 'Deletes a single user'
+        #swagger.description = 'Deletes a single user based on an "_id"'
+        #swagger.tags=['Users']
+        #swagger.parameters['id'] = {
+            description: 'Id of user',
+            required: true,
+            type: 'number',
+            schema: {id},
+    */
     const userId = new ObjectId(req.params.id);
 
     const response = await mongodb

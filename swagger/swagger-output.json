@@ -13,6 +13,10 @@
   "paths": {
     "/api-docs": {
       "get": {
+        "tags": [
+          "Api Documentation"
+        ],
+        "summary": "Displays api documentation",
         "description": "",
         "responses": {
           "default": {
@@ -23,6 +27,10 @@
     },
     "/users/": {
       "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets all users",
         "description": "",
         "produces": [
           "application/json"
@@ -34,7 +42,11 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Creates a new user",
+        "description": "Creates a new user based on an \"_id\"",
         "parameters": [
           {
             "name": "body",
@@ -73,7 +85,11 @@
     },
     "/users/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets a single user",
+        "description": "Gets a single user based on an \"_id\"",
         "produces": [
           "application/json"
         ],
@@ -88,11 +104,21 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Updates a single user",
+        "description": "Updates a single user based on an \"_id\"",
         "parameters": [
           {
             "name": "id",
@@ -135,7 +161,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Deletes a single user",
+        "description": "Deletes a single user based on an \"_id\"",
         "parameters": [
           {
             "name": "id",
